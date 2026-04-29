@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+<!--
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Personal website of Pratik Dutta · প্রতীক দত্ত
+  Senior Research Scientist, Department of Biomedical Informatics
+  Stony Brook University · https://duttaprat.github.io
+
+  Designed by Pratik Dutta · 2026
+  Source: https://github.com/duttaprat/duttaprat.github.io
+  License: Creative Commons Attribution 4.0 (CC BY 4.0)
+
+  You're welcome to adapt this template for your own academic site, but PLEASE:
+    1. Credit the original design by linking to https://duttaprat.github.io
+    2. Keep this comment block in your source.
+    3. Replace ALL personal content (text, photos, publications) with your own.
+
+  Thank you for respecting the work that went into this. — Pratik
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -111,25 +129,41 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============ HERO ============ */
+/* ============ HERO (2-row: name+photo, about+helix) ============ */
 .hero {
-  min-height: 100vh;
-  padding: 130px 48px 60px;
+  padding: 130px 48px 80px;
   position: relative;
-  display: flex;
-  align-items: center;
   overflow: hidden;
 }
-
 .hero-inner {
   max-width: 1320px;
   margin: 0 auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 70px;
-  align-items: center;
   position: relative;
   z-index: 2;
+}
+
+.hero-row {
+  display: grid;
+  gap: 80px;
+  align-items: center;
+}
+.hero-row-1 {
+  grid-template-columns: 1fr 1.2fr;
+  margin-bottom: 110px;
+}
+.hero-row-2 {
+  grid-template-columns: 1.15fr 1fr;
+  align-items: stretch;
+}
+.hero-row-2 > * {
+  min-height: 100%;
+}
+.hero-about-block {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .welcome-eyebrow {
@@ -139,7 +173,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.14em;
   color: var(--teal);
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -161,54 +195,45 @@ a { color: inherit; text-decoration: none; }
 .hero h1 {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(52px, 7vw, 92px);
-  line-height: 0.98;
+  font-size: clamp(56px, 7.5vw, 100px);
+  line-height: 0.96;
   letter-spacing: -0.03em;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   color: var(--ink);
 }
 
 .hero .bengali-name {
   font-family: var(--bengali);
   font-weight: 500;
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(22px, 2.4vw, 30px);
   color: var(--terracotta);
-  margin-bottom: 28px;
+  margin-bottom: 26px;
   display: block;
   font-style: italic;
 }
 
-.hero p.lead {
-  display: none;
-}
-
-.hero-about {
-  font-family: var(--sans);
-  font-size: 15.5px;
-  font-weight: 400;
-  line-height: 1.65;
-  color: var(--ink-soft);
-  max-width: 580px;
-  margin-bottom: 36px;
-}
-.hero-about .pull {
-  color: var(--teal);
-  font-style: italic;
+.hero-tagline {
   font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 1.85vw, 26px);
+  line-height: 1.35;
+  color: var(--ink);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+  max-width: 540px;
+}
+.hero-tagline em {
+  font-style: italic;
+  color: var(--teal);
   font-weight: 500;
 }
-.hero-about a {
-  color: var(--ink);
-  border-bottom: 1px solid var(--rule-strong);
-  transition: all 0.2s;
-}
-.hero-about a:hover { color: var(--teal); border-bottom-color: var(--teal); }
 
 .hero-affil {
   font-size: 14.5px;
   color: var(--ink-mid);
   line-height: 1.7;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 .hero-affil strong { color: var(--ink); font-weight: 500; }
 .hero-affil a {
@@ -217,6 +242,72 @@ a { color: inherit; text-decoration: none; }
   transition: all 0.2s;
 }
 .hero-affil a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* About prose — clean, no backdrop */
+.hero-about-block .eyebrow { margin-bottom: 22px; }
+.about-prose {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(17px, 1.45vw, 20px);
+  line-height: 1.65;
+  color: var(--ink);
+  letter-spacing: -0.003em;
+  margin: 0;
+}
+.about-prose .pull {
+  color: var(--teal);
+  font-style: italic;
+  font-weight: 500;
+}
+.about-prose a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule-strong);
+  transition: all 0.2s;
+  font-weight: 500;
+}
+.about-prose a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+
+/* Helix block - real visual on the right of row 2, stretches to match prose height */
+.hero-helix-block {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-left: auto;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+#dna-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.helix-meta {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .hero { padding: 110px 24px 60px; }
+  .hero-row { grid-template-columns: 1fr; gap: 48px; }
+  .hero-row-1 { margin-bottom: 80px; }
+  .hero-row-2 > * { min-height: auto; }
+  .hero-about-block { height: auto; justify-content: flex-start; }
+  .hero-photo { max-width: 380px; margin: 0 auto; }
+  .hero-helix-block { max-width: 420px; margin: 0 auto; min-height: 460px; aspect-ratio: 1; height: auto; }
+}
 
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn {
@@ -253,36 +344,82 @@ a { color: inherit; text-decoration: none; }
 .btn .arrow { transition: transform 0.25s; font-size: 14px; line-height: 1; }
 .btn:hover .arrow { transform: translate(3px, -3px); }
 
-/* DNA Helix visual */
-.hero-visual {
+/* Hero photo (replaces helix in hero) */
+.hero-photo {
   position: relative;
-  aspect-ratio: 1;
-  max-width: 540px;
+  aspect-ratio: 4 / 5;
+  max-width: 460px;
   width: 100%;
   margin-left: auto;
 }
-#dna-canvas {
+.photo-frame {
+  position: relative;
   width: 100%;
   height: 100%;
-  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-2);
+  box-shadow:
+    0 1px 2px rgba(22, 22, 22, 0.04),
+    0 12px 30px rgba(22, 22, 22, 0.07),
+    0 30px 80px rgba(22, 22, 22, 0.06);
+  transform: rotate(-0.6deg);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.hero-visual .visual-meta {
+.photo-frame:hover { transform: rotate(0deg) translateY(-3px); }
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.95);
+}
+.photo-frame::after {
+  content: '';
   position: absolute;
-  bottom: 4px; left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.22em;
-  color: var(--ink-muted);
-  text-transform: uppercase;
+  inset: 0;
   pointer-events: none;
-  white-space: nowrap;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+.hero-tagline em.tagline-teal {
+  color: var(--teal);
+  font-style: italic;
+  font-weight: 500;
 }
 
-@media (max-width: 1000px) {
-  .hero { padding: 110px 24px 60px; min-height: auto; }
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-visual { max-width: 380px; margin: 0 auto; order: -1; }
+.hero-tagline em.tagline-terracotta {
+  color: var(--terracotta);
+  font-style: italic;
+  font-weight: 500;
+}
+/* Decorative dots near photo - subtle accent */
+.photo-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.deco-dot {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+.deco-dot-1 {
+  width: 10px; height: 10px;
+  background: var(--terracotta);
+  top: -16px; right: 24px;
+}
+.deco-dot-2 {
+  width: 6px; height: 6px;
+  background: var(--teal);
+  bottom: 32px; left: -14px;
+}
+.deco-dot-3 {
+  width: 14px; height: 14px;
+  border: 1.5px solid var(--ink-mid);
+  background: transparent;
+  top: 38%; right: -18px;
+  opacity: 0.4;
 }
 
 /* ============ CONTAINERS ============ */
@@ -911,7 +1048,7 @@ p a:hover { border-bottom-color: var(--teal); }
   .htimeline-panels { min-height: 200px; }
 }
 
-/* ============ RECOGNITION CAROUSEL ============ */
+/* ============ RECOGNITION & SERVICE — HORIZONTAL ACADEMIC CAROUSEL ============ */
 .carousel-wrap {
   position: relative;
   margin-top: 56px;
@@ -919,7 +1056,8 @@ p a:hover { border-bottom-color: var(--teal); }
 
 .carousel-controls {
   position: absolute;
-  top: -64px; right: 0;
+  top: -64px;
+  right: 0;
   display: flex;
   gap: 8px;
   z-index: 5;
@@ -928,7 +1066,8 @@ p a:hover { border-bottom-color: var(--teal); }
 @media (max-width: 768px) { .carousel-controls { padding-right: 24px; } }
 
 .carousel-btn {
-  width: 44px; height: 44px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid var(--rule-strong);
   background: var(--bg);
@@ -943,24 +1082,17 @@ p a:hover { border-bottom-color: var(--teal); }
   border-color: var(--teal);
   color: var(--teal);
   transform: translateY(-1px);
-}
-.carousel-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-  transform: none;
-}
-.carousel-btn:disabled:hover {
-  border-color: var(--rule-strong);
-  color: var(--ink);
+  box-shadow: 0 8px 22px rgba(22, 22, 22, 0.08);
 }
 
 .carousel {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding: 8px max(48px, calc((100vw - 1280px) / 2 + 48px));
+  padding: 8px max(48px, calc((100vw - 1280px) / 2 + 48px)) 14px;
   margin: 0 calc(-1 * max(48px, calc((100vw - 1280px) / 2 + 48px)));
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -968,7 +1100,7 @@ p a:hover { border-bottom-color: var(--teal); }
 .carousel::-webkit-scrollbar { display: none; }
 @media (max-width: 768px) {
   .carousel {
-    padding: 8px 24px;
+    padding: 8px 24px 14px;
     margin: 0 -24px;
     gap: 16px;
   }
@@ -979,78 +1111,139 @@ p a:hover { border-bottom-color: var(--teal); }
   scroll-snap-align: start;
   background: var(--bg);
   border: 1px solid var(--rule);
-  border-radius: 20px;
+  border-radius: 22px;
   padding: 36px 32px;
-  transition: all 0.3s ease;
-  min-height: 360px;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.25s ease;
+  min-height: 390px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
+.carousel-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 1;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.carousel-card::after {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  right: -56px;
+  top: -56px;
+  background: rgba(255,255,255,0.38);
+  border: 1px solid rgba(255,255,255,0.5);
+  z-index: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.8;
+}
+.carousel-card > * { position: relative; z-index: 1; }
+
+/* Per-tile gradient backgrounds, matched to research-tile palette */
+.c-tile-1::before { background: linear-gradient(140deg, #f5e7dd 0%, #e8c8b3 100%); }
+.c-tile-2::before { background: linear-gradient(140deg, #ecf0f3 0%, #d3dee5 100%); }
+.c-tile-3::before { background: linear-gradient(140deg, #ede8df 0%, #d8cdb6 100%); }
+.c-tile-4::before { background: linear-gradient(140deg, #e9efe6 0%, #cfdfca 100%); }
+.c-tile-5::before { background: linear-gradient(140deg, #ede4ec 0%, #d8c5d6 100%); }
+.c-tile-6::before { background: linear-gradient(140deg, #e8efef 0%, #cfdcdc 100%); }
+
 .carousel-card:hover {
-  border-color: var(--rule-strong);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(22, 22, 22, 0.06);
+  transform: translateY(-5px);
+  box-shadow: 0 24px 50px rgba(22, 22, 22, 0.08);
+  border-color: rgba(22, 22, 22, 0.12);
 }
-@media (max-width: 600px) {
-  .carousel-card { flex: 0 0 calc(100vw - 80px); padding: 28px 24px; }
-}
+.carousel-card:hover::before { transform: scale(1.02); }
+.carousel-card:hover::after { transform: scale(1.18); opacity: 1; }
 
 .carousel-card .recog-eyebrow {
   font-family: var(--mono);
   font-size: 10.5px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--terracotta);
+  color: var(--ink-mid);
   margin-bottom: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.carousel-card .recog-eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
 }
 .carousel-card h4 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: 22px;
-  letter-spacing: -0.012em;
+  font-size: 24px;
+  letter-spacing: -0.016em;
   color: var(--ink);
-  margin-bottom: 16px;
-  line-height: 1.2;
+  margin-bottom: 18px;
+  line-height: 1.18;
 }
 .carousel-card ul {
   list-style: none;
   font-size: 14px;
-  color: var(--ink-soft);
+  color: var(--ink);
   line-height: 1.6;
 }
 .carousel-card ul li {
-  padding: 4px 0;
+  padding: 5px 0;
   position: relative;
-  padding-left: 14px;
+  padding-left: 16px;
 }
 .carousel-card ul li::before {
   content: '';
   position: absolute;
-  left: 0; top: 12px;
-  width: 5px; height: 1px;
-  background: var(--teal);
+  left: 0;
+  top: 15px;
+  width: 6px;
+  height: 1px;
+  background: var(--ink-mid);
 }
 .carousel-card a {
   color: var(--ink);
-  border-bottom: 1px solid var(--rule-strong);
+  border-bottom: 1px solid rgba(22, 22, 22, 0.3);
   transition: all 0.2s;
+  font-weight: 500;
 }
 .carousel-card a:hover { color: var(--teal); border-bottom-color: var(--teal); }
 
+@media (max-width: 600px) {
+  .carousel-card { flex: 0 0 calc(100vw - 80px); padding: 28px 24px; min-height: auto; }
+}
+
 /* ============ CONTACT PILLS ============ */
+.contact-actions {
+  max-width: 1060px;
+}
+
 .contact-pills {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-wrap: nowrap;
+  gap: 9px;
   margin-top: 52px;
   justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  overflow: visible;
 }
 
 .pill {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 14px 22px;
+  padding: 14px clamp(16px, 1.8vw, 22px);
   border-radius: 100px;
   background: var(--bg);
   border: 1px solid var(--rule-strong);
@@ -1060,6 +1253,9 @@ p a:hover { border-bottom-color: var(--teal); }
   color: var(--ink);
   transition: all 0.25s ease;
   cursor: pointer;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  min-height: 54px;
 }
 .pill:hover {
   background: var(--ink);
@@ -1073,10 +1269,32 @@ p a:hover { border-bottom-color: var(--teal); }
   color: var(--bg);
   border-color: var(--ink);
 }
-.pill-primary:hover {
+.pill-primary:hover,
+.pill-email:hover {
   background: var(--teal);
   border-color: var(--teal);
+  color: var(--bg);
   box-shadow: 0 8px 24px rgba(26, 107, 107, 0.25);
+}
+.pill-github:hover {
+  background: #24292f;
+  border-color: #24292f;
+  color: #ffffff;
+}
+.pill-huggingface:hover {
+  background: #ffd21e;
+  border-color: #ffd21e;
+  color: #111111;
+}
+.pill-linkedin:hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
+  color: #ffffff;
+}
+.pill-cv:hover {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: #ffffff;
 }
 
 .pill-icon {
@@ -1085,11 +1303,13 @@ p a:hover { border-bottom-color: var(--teal); }
   justify-content: center;
   font-size: 16px;
   line-height: 1;
+  flex: 0 0 auto;
 }
 .pill-icon svg { display: block; }
 
 .pill-label {
   letter-spacing: 0.005em;
+  white-space: nowrap;
 }
 
 .pill-arrow {
@@ -1097,8 +1317,36 @@ p a:hover { border-bottom-color: var(--teal); }
   opacity: 0.6;
   transition: transform 0.25s, opacity 0.2s;
   margin-left: 2px;
+  flex: 0 0 auto;
 }
 .pill:hover .pill-arrow { transform: translate(3px, -3px); opacity: 1; }
+
+@media (max-width: 900px) {
+  .contact-actions {
+    max-width: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .contact-actions::-webkit-scrollbar { display: none; }
+  .contact-pills {
+    width: max-content;
+    min-width: max-content;
+    padding-right: 24px;
+  }
+  .pill { padding: 14px 18px; }
+}
+
+@media (max-width: 700px) {
+  .contact-actions { overflow-x: visible; }
+  .contact-pills {
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    padding-right: 0;
+  }
+  .pill { padding: 13px 18px; }
+}
 
 /* ============ FOOTER ============ */
 footer {
@@ -1132,6 +1380,26 @@ footer .foot-meta {
 footer .foot-meta a { color: var(--ink-muted); border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
 footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal); }
 
+.foot-attribution {
+  max-width: 1280px;
+  margin: 28px auto 0;
+  padding: 18px 48px 0;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  text-align: center;
+}
+.foot-attribution a {
+  color: var(--ink-mid);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+  transition: all 0.2s;
+}
+.foot-attribution a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+@media (max-width: 768px) { .foot-attribution { padding: 18px 24px 0; } }
+
 @media (max-width: 768px) { footer .foot-inner { padding: 0 24px; } }
 
 /* Reveal */
@@ -1162,35 +1430,60 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
   </nav>
 </header>
 
-<!-- ============ HERO ============ -->
+<!-- ============ HERO (2-row: name+photo, about+helix) ============ -->
 <section class="hero" id="top">
   <div class="hero-inner">
-    <div class="hero-content">
-      <div class="welcome-eyebrow reveal">
-        <span class="bengali-welcome">স্বাগতম</span> · Welcome
+
+    <!-- ROW 1: Photo (left) | Name block (right) -->
+    <div class="hero-row hero-row-1">
+      <div class="hero-photo reveal">
+        <div class="photo-frame">
+          <img src="images/pratik_hero.jpg" alt="Pratik Dutta" loading="eager" />
+          <div class="photo-deco">
+            <span class="deco-dot deco-dot-1"></span>
+            <span class="deco-dot deco-dot-2"></span>
+            <span class="deco-dot deco-dot-3"></span>
+          </div>
+        </div>
       </div>
-      <h1 class="reveal">
-        Pratik Dutta
-      </h1>
-      <span class="bengali-name reveal">প্রতীক দত্ত</span>
-      <div class="hero-affil reveal">
-        <strong>Senior Research Scientist</strong><br>
-        Department of Biomedical Informatics<br>
-        <a href="https://www.stonybrook.edu/" target="_blank" rel="noopener">Stony Brook University</a>
-      </div>
-      <p class="hero-about reveal">
-        Pratik Dutta is a Senior Research Scientist in the Department of Biomedical Informatics at Stony Brook University, working in <a href="https://davulurilab.github.io/" target="_blank" rel="noopener">Prof. Ramana V. Davuluri's lab</a>. His research builds <span class="pull">interpretable genomic foundation models</span> that learn the language of DNA and can explain the biological mechanisms behind their predictions, with applications across cancer, neurodegeneration, viral genomics, spatial biology, and population-scale variation. He is broadly interested in closing the gap between the scale of modern foundation models and the interpretability we need to act on them clinically, and his recent work spans pre-training large genomic language models, predicting the regulatory impact of non-coding variants, and orchestrating multi-modal reasoning over biological knowledge. Before Stony Brook, he completed his PhD at <a href="https://www.iitp.ac.in/" target="_blank" rel="noopener">IIT Patna</a> under <a href="https://www.iitp.ac.in/~sriparna/" target="_blank" rel="noopener">Dr. Sriparna Saha</a> as a Visvesvaraya Research Fellow, with bachelor's and master's degrees from <a href="https://www.iiests.ac.in/" target="_blank" rel="noopener">IIEST Shibpur</a>. He is currently exploring tenure-track faculty opportunities and welcomes prospective collaborators and students.
-      </p>
-      <div class="hero-cta reveal">
-        <a href="#research" class="btn btn-primary">Explore research <span class="arrow">↗</span></a>
-        <a href="CV/Pratik_Dutta_CV_2026.pdf" target="_blank" class="btn btn-ghost">Download CV</a>
+
+      <div class="hero-name-block">
+        <div class="welcome-eyebrow reveal">
+          <span class="bengali-welcome">স্বাগতম</span> · Welcome
+        </div>
+        <h1 class="reveal">Pratik Dutta</h1>
+        <span class="bengali-name reveal">প্রতীক দত্ত</span>
+        <div class="hero-tagline reveal">
+          Decoding <em class="tagline-teal">DNA sequence to disease mechanism</em> through <em class="tagline-terracotta">interpretable AI</em>.
+        </div>
+        <div class="hero-affil reveal">
+          <strong>Senior Research Scientist</strong><br>
+          Department of Biomedical Informatics · MART 07-0601<br>
+          <a href="https://www.stonybrook.edu/" target="_blank" rel="noopener">Stony Brook University</a>, <a href="https://cancer.stonybrookmedicine.edu/" target="_blank" rel="noopener">Stony Brook Cancer Center</a><br>
+          1 Lauterbur Dr, Stony Brook, NY 11794
+        </div>
+        <div class="hero-cta reveal">
+          <a href="#research" class="btn btn-primary">Explore research <span class="arrow">↗</span></a>
+          <a href="CV/Pratik_Dutta_CV_2026.pdf" target="_blank" class="btn btn-ghost">Download CV</a>
+        </div>
       </div>
     </div>
 
-    <div class="hero-visual">
-      <canvas id="dna-canvas"></canvas>
-      <div class="visual-meta">DNA · embeddings · interpretation</div>
+    <!-- ROW 2: About prose (left) | Helix (right) -->
+    <div class="hero-row hero-row-2">
+      <div class="hero-about-block">
+        <div class="eyebrow reveal">About</div>
+        <p class="about-prose reveal">
+          Pratik Dutta is a Senior Research Scientist in the Department of Biomedical Informatics at Stony Brook University, working in <a href="https://bmi.stonybrookmedicine.edu/people/ramana_davuluri" target="_blank" rel="noopener">Prof. Ramana V. Davuluri's</a> lab. His research builds <span class="pull">interpretable genomic foundation models</span> that learn the language of DNA and can explain the biological mechanisms behind their predictions, with applications across cancer, neurodegeneration, viral genomics, spatial biology, and population-scale variation. He is broadly interested in closing the gap between the scale of modern foundation models and the interpretability we need to act on them clinically, and his recent work spans pre-training large genomic language models, predicting the regulatory impact of non-coding variants, and orchestrating multi-modal reasoning over biological knowledge. Before Stony Brook, he completed his PhD at <a href="https://www.iitp.ac.in/" target="_blank" rel="noopener">IIT Patna</a> under <a href="https://www.iitp.ac.in/~sriparna/" target="_blank" rel="noopener">Dr. Sriparna Saha</a> as a Visvesvaraya Research Fellow, with bachelor's and master's degrees from <a href="https://www.iiests.ac.in/" target="_blank" rel="noopener">IIEST Shibpur</a>. He is currently exploring tenure-track faculty opportunities and welcomes prospective collaborators and students.
+        </p>
+      </div>
+
+      <div class="hero-helix-block reveal">
+        <canvas id="dna-canvas"></canvas>
+        <div class="helix-meta">DNA · embeddings · interpretation</div>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -1542,7 +1835,7 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
       <div class="stat">
         <span class="stat-num" data-target="972" data-suffix="+">0</span>
         <span class="stat-label">Citations</span>
-        <span class="stat-source"><a href="https://scholar.google.com/citations?user=hqhM6YAAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></span>
+        <span class="stat-source"><a href="https://scholar.google.com/citations?user=Z6WEPGYAAAAJ" target="_blank" rel="noopener">Google Scholar</a></span>
       </div>
       <div class="stat">
         <span class="stat-num" data-target="462" data-suffix="">0</span>
@@ -1563,12 +1856,12 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
       <div class="pub-card">
         <div>
           <div class="pub-year">2026</div>
-          <div class="pub-venue-tag flagship">bioRxiv · 1st author</div>
+          <div class="pub-venue-tag flagship">mSystems · ASM · 1st author</div>
         </div>
         <div>
           <h4>HViLM: A Foundation Model for Viral Genomics Enables Multi-Task Prediction of Pathogenicity, Transmissibility, and Host Tropism</h4>
           <p class="authors"><em class="self">Pratik Dutta</em>, Jack Vaska, Pallavi Surana, Rekha Sathian, Max Chao, Zhihan Zhou, Han Liu, Ramana V. Davuluri</p>
-          <p class="venue-line">bioRxiv, Cold Spring Harbor Laboratory <span class="badge">Communicated to mSystems </span></p>
+          <p class="venue-line">mSystems, American Society for Microbiology, 2026 <span class="badge">Under review</span></p>
           <div class="links">
             <a href="https://huggingface.co/datasets/duttaprat/HVUE" target="_blank" rel="noopener">HVUE Benchmark ↗</a>
           </div>
@@ -1744,7 +2037,7 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
 
     </div>
 
-    <p class="scholar-link">Full publication list on <a href="https://scholar.google.com/citations?user=hqhM6YAAAAAJ&hl=en" target="_blank" rel="noopener" style="color: var(--teal); border-bottom: 1px solid var(--teal-soft);">Google Scholar ↗</a></p>
+    <p class="scholar-link">Full publication list on <a href="https://scholar.google.com/citations?user=Z6WEPGYAAAAJ" target="_blank" rel="noopener" style="color: var(--teal); border-bottom: 1px solid var(--teal-soft);">Google Scholar ↗</a></p>
   </div>
 </section>
 
@@ -1850,7 +2143,7 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
 
     <div class="carousel" id="recog-carousel">
 
-      <div class="carousel-card">
+      <div class="carousel-card c-tile-1">
         <div class="recog-eyebrow">Open source</div>
         <h4>Releases &amp; deployed platforms</h4>
         <ul>
@@ -1861,7 +2154,7 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
         </ul>
       </div>
 
-      <div class="carousel-card">
+      <div class="carousel-card c-tile-2">
         <div class="recog-eyebrow">Awards &amp; fellowships</div>
         <h4>Selected honors</h4>
         <ul>
@@ -1873,7 +2166,7 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
         </ul>
       </div>
 
-      <div class="carousel-card">
+      <div class="carousel-card c-tile-3">
         <div class="recog-eyebrow">Talks &amp; tutorials</div>
         <h4>Invited lectures</h4>
         <ul>
@@ -1884,7 +2177,7 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
         </ul>
       </div>
 
-      <div class="carousel-card">
+      <div class="carousel-card c-tile-4">
         <div class="recog-eyebrow">Peer review</div>
         <h4>Service to the field</h4>
         <ul>
@@ -1895,7 +2188,7 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
         </ul>
       </div>
 
-      <div class="carousel-card">
+      <div class="carousel-card c-tile-5">
         <div class="recog-eyebrow">Teaching</div>
         <h4>Course instruction</h4>
         <ul>
@@ -1906,7 +2199,7 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
         </ul>
       </div>
 
-      <div class="carousel-card">
+      <div class="carousel-card c-tile-6">
         <div class="recog-eyebrow">Mentorship</div>
         <h4>Graduate &amp; undergraduate research</h4>
         <ul>
@@ -1918,8 +2211,6 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
     </div>
   </div>
 </section>
-
-<!-- ============ CONTACT ============ -->
 <section class="body-section tinted" id="contact">
   <div class="container">
     <div class="eyebrow reveal">Get in touch</div>
@@ -1929,35 +2220,35 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
     </p>
   </div>
 
-  <div class="container">
+  <div class="container contact-actions">
     <div class="contact-pills reveal">
-      <a href="mailto:pratik.dutta@stonybrook.edu" class="pill pill-primary">
+      <a href="mailto:pratik.dutta@stonybrook.edu" class="pill pill-primary pill-email">
         <span class="pill-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 8L12 13L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
         <span class="pill-label">Email</span>
         <span class="pill-arrow">↗</span>
       </a>
-      <a href="https://github.com/duttaprat" target="_blank" rel="noopener" class="pill">
+      <a href="https://github.com/duttaprat" target="_blank" rel="noopener" class="pill pill-github">
         <span class="pill-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
         </span>
         <span class="pill-label">GitHub</span>
         <span class="pill-arrow">↗</span>
       </a>
-      <a href="https://huggingface.co/duttaprat" target="_blank" rel="noopener" class="pill">
+      <a href="https://huggingface.co/duttaprat" target="_blank" rel="noopener" class="pill pill-huggingface">
         <span class="pill-icon">🤗</span>
         <span class="pill-label">Hugging Face</span>
         <span class="pill-arrow">↗</span>
       </a>
-      <a href="https://www.linkedin.com/in/duttaprat/" target="_blank" rel="noopener" class="pill">
+      <a href="https://www.linkedin.com/in/duttaprat/" target="_blank" rel="noopener" class="pill pill-linkedin">
         <span class="pill-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
         </span>
         <span class="pill-label">LinkedIn</span>
         <span class="pill-arrow">↗</span>
       </a>
-      <a href="CV/Pratik_CV.pdf" target="_blank" class="pill">
+      <a href="CV/Pratik_Dutta_CV_2026.pdf" target="_blank" class="pill pill-cv">
         <span class="pill-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
@@ -1971,152 +2262,608 @@ footer .foot-meta a:hover { color: var(--teal); border-bottom-color: var(--teal)
   <div class="foot-inner">
     <div class="foot-name">Pratik Dutta · প্রতীক দত্ত</div>
     <div class="foot-meta">
-      © 2026 · <a href="https://github.com/duttaprat/duttaprat.github.io" target="_blank" rel="noopener">View source</a>
+      © 2026 · Designed by Pratik Dutta · <a href="https://github.com/duttaprat/duttaprat.github.io/blob/main/LICENSE.md" target="_blank" rel="noopener">CC BY 4.0</a> · <a href="https://github.com/duttaprat/duttaprat.github.io" target="_blank" rel="noopener">Source</a>
     </div>
+  </div>
+  <div class="foot-attribution">
+    Free to adapt with attribution. If you use this template, please credit and link back to <a href="https://duttaprat.github.io" rel="noopener">duttaprat.github.io</a>.
   </div>
 </footer>
 
-<!-- ============ DNA HELIX (3D, light mode) ============ -->
+<!-- ============ DNA HELIX (3D, clean: helix + AI node cloud + attention beams) ============ -->
 <script type="module">
 import * as THREE from 'three';
 
 const canvas = document.getElementById('dna-canvas');
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-camera.position.set(0, 0, 14);
+const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+camera.position.set(0, 0.4, 18);
 
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.1;
 
 function resize() {
   const rect = canvas.getBoundingClientRect();
+  if (rect.width === 0 || rect.height === 0) return;
   renderer.setSize(rect.width, rect.height, false);
   camera.aspect = rect.width / rect.height;
   camera.updateProjectionMatrix();
 }
 resize();
 window.addEventListener('resize', resize);
+window.addEventListener('load', resize);
+setTimeout(resize, 300);
 
+// === Palette ===
 const teal = new THREE.Color(0x1a6b6b);
+const deepTeal = new THREE.Color(0x0f4a4a);
 const terracotta = new THREE.Color(0xc46a3d);
-const navy = new THREE.Color(0x2a3d5c);
 const gold = new THREE.Color(0xc9a050);
 const ink = new THREE.Color(0x161616);
 
-// === Build double helix ===
-const helixGroup = new THREE.Group();
-const points = 50;
-const radius = 2.2;
-const heightSpan = 10;
-const turns = 2.2;
+// === Lighting (sculptural) ===
+scene.add(new THREE.AmbientLight(0xffffff, 1.9));
+const keyLight = new THREE.DirectionalLight(0xffffff, 2.3);
+keyLight.position.set(5, 8, 8);
+scene.add(keyLight);
+const tealLight = new THREE.PointLight(0x1a6b6b, 18, 22);
+tealLight.position.set(-4, -4, 6);
+scene.add(tealLight);
+const warmLight = new THREE.PointLight(0xc46a3d, 10, 18);
+warmLight.position.set(4, 5, 5);
+scene.add(warmLight);
 
+const root = new THREE.Group();
+root.rotation.z = -0.05;
+scene.add(root);
+
+// ============================================================
+// LAYER 1: Glossy DNA helix (the central object)
+// ============================================================
+const helixGroup = new THREE.Group();
+root.add(helixGroup);
+
+const points = 112;
+const radius = 1.48;
+const heightSpan = 13.9;
+const turns = 3.35;
 const strand1 = [];
 const strand2 = [];
 
 for (let i = 0; i < points; i++) {
-  const t = i / (points - 1);
-  const angle = t * turns * Math.PI * 2;
-  const y = (t - 0.5) * heightSpan;
+  const u = i / (points - 1);
+  const angle = u * turns * Math.PI * 2;
+  const y = (u - 0.5) * heightSpan;
   strand1.push(new THREE.Vector3(Math.cos(angle) * radius, y, Math.sin(angle) * radius));
   strand2.push(new THREE.Vector3(Math.cos(angle + Math.PI) * radius, y, Math.sin(angle + Math.PI) * radius));
 }
 
-const sphereGeo = new THREE.SphereGeometry(0.13, 16, 16);
-// Cycle through 4 nucleotide colors (A/T/G/C metaphor)
-const matCycle = [
-  new THREE.MeshBasicMaterial({ color: teal }),
-  new THREE.MeshBasicMaterial({ color: terracotta }),
-  new THREE.MeshBasicMaterial({ color: navy }),
-  new THREE.MeshBasicMaterial({ color: gold })
+const ribbonMatA = new THREE.MeshPhysicalMaterial({
+  color: teal,
+  roughness: 0.24,
+  metalness: 0.08,
+  clearcoat: 0.9,
+  clearcoatRoughness: 0.18,
+  transparent: true,
+  opacity: 0.96
+});
+const ribbonMatB = new THREE.MeshPhysicalMaterial({
+  color: 0xf0cf9a,
+  roughness: 0.28,
+  metalness: 0.16,
+  clearcoat: 0.85,
+  clearcoatRoughness: 0.2,
+  transparent: true,
+  opacity: 0.92
+});
+
+const curve1 = new THREE.CatmullRomCurve3(strand1);
+const curve2 = new THREE.CatmullRomCurve3(strand2);
+const tube1 = new THREE.Mesh(new THREE.TubeGeometry(curve1, 220, 0.065, 18, false), ribbonMatA);
+const tube2 = new THREE.Mesh(new THREE.TubeGeometry(curve2, 220, 0.055, 18, false), ribbonMatB);
+helixGroup.add(tube1, tube2);
+
+function cylinderBetween(start, end, radiusValue, material) {
+  const dir = new THREE.Vector3().subVectors(end, start);
+  const mid = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
+  const geometry = new THREE.CylinderGeometry(radiusValue, radiusValue, dir.length(), 10, 1);
+  const mesh = new THREE.Mesh(geometry, material);
+  mesh.position.copy(mid);
+  mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.clone().normalize());
+  return mesh;
+}
+
+const rungMat = new THREE.MeshPhysicalMaterial({
+  color: 0xd9b36c,
+  roughness: 0.35,
+  metalness: 0.25,
+  transparent: true,
+  opacity: 0.78
+});
+const baseMats = [
+  new THREE.MeshStandardMaterial({ color: teal, roughness: 0.35, emissive: teal, emissiveIntensity: 0.08 }),
+  new THREE.MeshStandardMaterial({ color: terracotta, roughness: 0.38, emissive: terracotta, emissiveIntensity: 0.06 }),
+  new THREE.MeshStandardMaterial({ color: deepTeal, roughness: 0.35, emissive: deepTeal, emissiveIntensity: 0.08 }),
+  new THREE.MeshStandardMaterial({ color: gold, roughness: 0.38, emissive: gold, emissiveIntensity: 0.05 })
+];
+const baseGeo = new THREE.SphereGeometry(0.105, 18, 18);
+const helixBases = [];
+
+for (let i = 0; i < points; i += 2) {
+  const rung = cylinderBetween(strand1[i], strand2[i], 0.022, rungMat);
+  helixGroup.add(rung);
+}
+for (let i = 0; i < points; i += 3) {
+  const a = new THREE.Mesh(baseGeo, baseMats[i % baseMats.length]);
+  a.position.copy(strand1[i]);
+  const b = new THREE.Mesh(baseGeo, baseMats[(i + 2) % baseMats.length]);
+  b.position.copy(strand2[i]);
+  a.userData.phase = Math.random() * Math.PI * 2;
+  b.userData.phase = Math.random() * Math.PI * 2;
+  helixBases.push(a, b);
+  helixGroup.add(a, b);
+}
+
+// ============================================================
+// LAYER 2: AI node cloud (45 nodes orbiting the helix)
+// ============================================================
+const nodeGroup = new THREE.Group();
+root.add(nodeGroup);
+const nodeGeo = new THREE.SphereGeometry(0.07, 16, 16);
+const nodes = [];
+const nodeCount = 45;
+const nodeMats = [
+  new THREE.MeshBasicMaterial({ color: teal, transparent: true, opacity: 0.7 }),
+  new THREE.MeshBasicMaterial({ color: gold, transparent: true, opacity: 0.62 }),
+  new THREE.MeshBasicMaterial({ color: ink, transparent: true, opacity: 0.26 }),
+  new THREE.MeshBasicMaterial({ color: terracotta, transparent: true, opacity: 0.5 })
 ];
 
-strand1.forEach((p, i) => {
-  const m = new THREE.Mesh(sphereGeo, matCycle[i % 4]);
-  m.position.copy(p);
-  helixGroup.add(m);
-});
-strand2.forEach((p, i) => {
-  // Complementary pairing: shift colors so strand2 looks like base-pair complement
-  const m = new THREE.Mesh(sphereGeo, matCycle[(i + 2) % 4]);
-  m.position.copy(p);
-  helixGroup.add(m);
-});
-
-// Base-pair rungs
-const rungMat = new THREE.LineBasicMaterial({ color: 0x161616, transparent: true, opacity: 0.18 });
-for (let i = 0; i < points; i += 2) {
-  const geo = new THREE.BufferGeometry().setFromPoints([strand1[i], strand2[i]]);
-  helixGroup.add(new THREE.Line(geo, rungMat));
-}
-
-// Continuous strand lines - subtle, complement helix colors
-const strandMat1 = new THREE.LineBasicMaterial({ color: teal, transparent: true, opacity: 0.35 });
-const strandMat2 = new THREE.LineBasicMaterial({ color: navy, transparent: true, opacity: 0.35 });
-helixGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(strand1), strandMat1));
-helixGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(strand2), strandMat2));
-
-scene.add(helixGroup);
-
-// Neural-network nodes around helix
-const nodeCount = 28;
-const nodes = [];
-const nodeGeo = new THREE.SphereGeometry(0.06, 12, 12);
-const nodeMat = new THREE.MeshBasicMaterial({ color: ink, transparent: true, opacity: 0.35 });
 for (let i = 0; i < nodeCount; i++) {
-  const m = new THREE.Mesh(nodeGeo, nodeMat.clone());
-  const r = 4.2 + Math.random() * 1.5;
+  const m = new THREE.Mesh(nodeGeo, nodeMats[i % nodeMats.length].clone());
   const theta = Math.random() * Math.PI * 2;
-  const phi = Math.acos(2 * Math.random() - 1);
-  m.position.set(
-    r * Math.sin(phi) * Math.cos(theta),
-    r * Math.sin(phi) * Math.sin(theta) * 0.7,
-    r * Math.cos(phi)
-  );
+  const ring = i % 3;
+  const r = 3.2 + ring * 0.85 + Math.random() * 0.9;
+  const y = (Math.random() - 0.5) * heightSpan * 1.05;
+  m.position.set(r * Math.cos(theta), y, r * Math.sin(theta));
   m.userData.basePos = m.position.clone();
   m.userData.phase = Math.random() * Math.PI * 2;
+  m.userData.speed = 0.45 + Math.random() * 0.9;
+  m.userData.orbit = 0.03 + Math.random() * 0.03;
   nodes.push(m);
-  scene.add(m);
+  nodeGroup.add(m);
 }
 
-// Connect close nodes
-const linkPositions = [];
+// Edges between close nodes (network feel)
+const edgePairs = [];
 for (let i = 0; i < nodes.length; i++) {
   for (let j = i + 1; j < nodes.length; j++) {
-    if (nodes[i].position.distanceTo(nodes[j].position) < 2.5) {
-      linkPositions.push(nodes[i].position.x, nodes[i].position.y, nodes[i].position.z);
-      linkPositions.push(nodes[j].position.x, nodes[j].position.y, nodes[j].position.z);
-    }
+    const d = nodes[i].position.distanceTo(nodes[j].position);
+    if (d < 2.1 && edgePairs.length < 80) edgePairs.push([i, j]);
   }
 }
-const linkGeo = new THREE.BufferGeometry();
-linkGeo.setAttribute('position', new THREE.Float32BufferAttribute(linkPositions, 3));
-const linkMat = new THREE.LineBasicMaterial({ color: 0x1a6b6b, transparent: true, opacity: 0.13 });
-const links = new THREE.LineSegments(linkGeo, linkMat);
-scene.add(links);
+const edgePositions = new Float32Array(edgePairs.length * 6);
+const edgeGeo = new THREE.BufferGeometry();
+edgeGeo.setAttribute('position', new THREE.BufferAttribute(edgePositions, 3));
+const edgeMat = new THREE.LineBasicMaterial({ color: 0x1a6b6b, transparent: true, opacity: 0.12 });
+const edgeLines = new THREE.LineSegments(edgeGeo, edgeMat);
+nodeGroup.add(edgeLines);
 
+// ============================================================
+// LAYER 3: Attention beams (model reads specific DNA bases)
+// ============================================================
+const attentionPairs = [];
+for (let k = 0; k < 10; k++) {
+  const node = nodes[Math.floor(Math.random() * nodes.length)];
+  const base = helixBases[Math.floor(Math.random() * helixBases.length)];
+  const geo = new THREE.BufferGeometry().setFromPoints([
+    node.position.clone(),
+    base.getWorldPosition(new THREE.Vector3())
+  ]);
+  const mat = new THREE.LineBasicMaterial({
+    color: k % 2 === 0 ? 0xc46a3d : 0xc9a050,
+    transparent: true,
+    opacity: 0
+  });
+  const line = new THREE.Line(geo, mat);
+  root.add(line);
+  attentionPairs.push({
+    line, geo, mat, node, base,
+    phase: Math.random() * Math.PI * 2,
+    speed: 0.7 + Math.random() * 0.9
+  });
+}
+
+// ============================================================
+// LAYER 4: Translucent cells + nuclei (biology context)
+// ============================================================
+const bioGroup = new THREE.Group();
+bioGroup.position.set(3.2, 3.7, -1.6);
+bioGroup.rotation.z = 0.18;
+root.add(bioGroup);
+
+const cellMat = new THREE.MeshPhysicalMaterial({
+  color: 0xf2c6b6,
+  roughness: 0.28,
+  metalness: 0.02,
+  transmission: 0.35,
+  transparent: true,
+  opacity: 0.34,
+  clearcoat: 0.8
+});
+const nucleusMat = new THREE.MeshStandardMaterial({
+  color: terracotta,
+  transparent: true,
+  opacity: 0.56,
+  roughness: 0.5,
+  emissive: terracotta,
+  emissiveIntensity: 0.05
+});
+const cellSpecs = [
+  [0, 0, 0, 0.82],
+  [1.2, -0.45, 0.25, 0.42],
+  [-0.85, -0.55, -0.15, 0.34],
+  [0.45, 0.95, -0.18, 0.30]
+];
+const cells = [];
+cellSpecs.forEach((s, idx) => {
+  const cell = new THREE.Mesh(new THREE.SphereGeometry(s[3], 32, 32), cellMat.clone());
+  cell.position.set(s[0], s[1], s[2]);
+  const nucleus = new THREE.Mesh(new THREE.SphereGeometry(s[3] * 0.32, 22, 22), nucleusMat.clone());
+  nucleus.position.set(s[3] * 0.12, s[3] * 0.05, s[3] * 0.18);
+  cell.add(nucleus);
+  cell.userData.phase = idx * 1.7 + Math.random();
+  cells.push(cell);
+  bioGroup.add(cell);
+});
+
+// ============================================================
+// LAYER 5: Off-helix molecule lattice
+// ============================================================
+const moleculeGeo = new THREE.BufferGeometry();
+const moleculePositions = [];
+const moleculePairs = [];
+for (let i = 0; i < 26; i++) {
+  moleculePositions.push((Math.random() - 0.5) * 3.4, (Math.random() - 0.5) * 2.5, (Math.random() - 0.5) * 1.5);
+}
+for (let i = 0; i < 26; i++) {
+  for (let j = i + 1; j < 26; j++) {
+    const ax = moleculePositions[i * 3], ay = moleculePositions[i * 3 + 1], az = moleculePositions[i * 3 + 2];
+    const bx = moleculePositions[j * 3], by = moleculePositions[j * 3 + 1], bz = moleculePositions[j * 3 + 2];
+    const d = Math.hypot(ax - bx, ay - by, az - bz);
+    if (d < 0.85) moleculePairs.push(ax, ay, az, bx, by, bz);
+  }
+}
+moleculeGeo.setAttribute('position', new THREE.Float32BufferAttribute(moleculePairs, 3));
+const moleculeLines = new THREE.LineSegments(moleculeGeo, new THREE.LineBasicMaterial({ color: 0xc9a050, transparent: true, opacity: 0.18 }));
+moleculeLines.position.set(-4.4, -2.1, -1.8);
+root.add(moleculeLines);
+
+// ============================================================
+// LAYER 6: Prediction signal rings sliding through genome
+// ============================================================
+const rings = [];
+for (let i = 0; i < 4; i++) {
+  const ringMat = new THREE.MeshBasicMaterial({ color: i % 2 ? 0xc46a3d : 0x1a6b6b, transparent: true, opacity: 0.18, side: THREE.DoubleSide });
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(2.65 + i * 0.1, 0.012, 10, 160), ringMat);
+  ring.rotation.x = Math.PI / 2;
+  ring.position.y = -heightSpan / 2 + i * 3.6;
+  ring.userData.offset = i / 4;
+  rings.push(ring);
+  root.add(ring);
+}
+
+// ============================================================
+// LAYER 7: 5-layer transformer plane stack with pins + bridges
+// ============================================================
+const modelGroup = new THREE.Group();
+modelGroup.position.set(-4.55, 1.15, -2.2);
+modelGroup.rotation.y = 0.42;
+modelGroup.rotation.x = -0.16;
+root.add(modelGroup);
+
+const modelLayers = [];
+const modelPins = [];
+for (let i = 0; i < 5; i++) {
+  const layer = new THREE.Mesh(
+    new THREE.PlaneGeometry(1.6, 2.25),
+    new THREE.MeshPhysicalMaterial({
+      color: i % 2 ? 0x1a6b6b : 0xf7f5f1,
+      transparent: true,
+      opacity: i % 2 ? 0.11 : 0.17,
+      transmission: 0.18,
+      roughness: 0.32,
+      metalness: 0.03,
+      side: THREE.DoubleSide
+    })
+  );
+  layer.position.set(i * 0.22, 0, -i * 0.34);
+  layer.userData.phase = i * 0.8 + Math.random();
+  modelLayers.push(layer);
+  modelGroup.add(layer);
+
+  const pinGroup = new THREE.Group();
+  const pinGeo = new THREE.SphereGeometry(0.032, 12, 12);
+  for (let py = 0; py < 5; py++) {
+    for (let px = 0; px < 3; px++) {
+      const pin = new THREE.Mesh(
+        pinGeo,
+        new THREE.MeshBasicMaterial({ color: px === 1 ? 0xc9a050 : 0x1a6b6b, transparent: true, opacity: 0.55 })
+      );
+      pin.position.set(-0.45 + px * 0.45, -0.72 + py * 0.36, 0.01);
+      pin.userData.phase = Math.random() * Math.PI * 2;
+      pinGroup.add(pin);
+      modelPins.push(pin);
+    }
+  }
+  pinGroup.position.copy(layer.position);
+  pinGroup.position.z += 0.02;
+  modelGroup.add(pinGroup);
+}
+
+const modelBridgePoints = [];
+for (let i = 0; i < modelLayers.length - 1; i++) {
+  modelBridgePoints.push(
+    new THREE.Vector3(modelLayers[i].position.x + 0.72, 0, modelLayers[i].position.z),
+    new THREE.Vector3(modelLayers[i + 1].position.x - 0.72, 0, modelLayers[i + 1].position.z)
+  );
+}
+const modelBridge = new THREE.LineSegments(
+  new THREE.BufferGeometry().setFromPoints(modelBridgePoints),
+  new THREE.LineBasicMaterial({ color: 0xc9a050, transparent: true, opacity: 0.18 })
+);
+modelGroup.add(modelBridge);
+
+// ============================================================
+// LAYER 8: 9x9 transformer attention matrix
+// ============================================================
+const attnMatrixGroup = new THREE.Group();
+attnMatrixGroup.position.set(-0.18, -1.85, -0.55);
+attnMatrixGroup.rotation.x = 0.03;
+modelGroup.add(attnMatrixGroup);
+const attnCells = [];
+const attnCellGeo = new THREE.PlaneGeometry(0.105, 0.105);
+for (let y = 0; y < 9; y++) {
+  for (let x = 0; x < 9; x++) {
+    const diag = Math.abs(x - y) <= 1;
+    const mat = new THREE.MeshBasicMaterial({
+      color: diag ? 0xc9a050 : (x + y) % 3 === 0 ? 0x1a6b6b : 0xffffff,
+      transparent: true,
+      opacity: diag ? 0.42 : 0.12,
+      side: THREE.DoubleSide
+    });
+    const cell = new THREE.Mesh(attnCellGeo, mat);
+    cell.position.set((x - 4) * 0.13, (y - 4) * 0.13, 0);
+    cell.userData.phase = (x * 0.37 + y * 0.51) + Math.random();
+    cell.userData.diag = diag;
+    attnCells.push(cell);
+    attnMatrixGroup.add(cell);
+  }
+}
+
+// ============================================================
+// LAYER 9: 4-layer side neural-net architecture
+// ============================================================
+const neuralGroup = new THREE.Group();
+neuralGroup.position.set(-4.25, -1.95, -1.75);
+neuralGroup.rotation.y = 0.35;
+neuralGroup.rotation.z = -0.04;
+root.add(neuralGroup);
+const neuralNodes = [];
+const neuralEdges = [];
+const layerCounts = [4, 6, 6, 4];
+const layerX = [-1.05, -0.35, 0.35, 1.05];
+layerCounts.forEach((count, li) => {
+  for (let ni = 0; ni < count; ni++) {
+    const node = new THREE.Mesh(
+      new THREE.SphereGeometry(0.045, 14, 14),
+      new THREE.MeshBasicMaterial({ color: li === 0 ? 0xc9a050 : li === 3 ? 0xc46a3d : 0x1a6b6b, transparent: true, opacity: 0.65 })
+    );
+    node.position.set(layerX[li], (ni - (count - 1) / 2) * 0.25, 0);
+    node.userData.phase = Math.random() * Math.PI * 2;
+    node.userData.layer = li;
+    neuralNodes.push(node);
+    neuralGroup.add(node);
+  }
+});
+let _startA = 0;
+for (let li = 0; li < layerCounts.length - 1; li++) {
+  let _startB = _startA + layerCounts[li];
+  for (let a = 0; a < layerCounts[li]; a++) {
+    for (let b = 0; b < layerCounts[li + 1]; b++) {
+      if ((a + b + li) % 2 === 0 || Math.random() > 0.52) {
+        neuralEdges.push([_startA + a, _startB + b, Math.random() * Math.PI * 2]);
+      }
+    }
+  }
+  _startA += layerCounts[li];
+}
+const neuralEdgePositions = new Float32Array(neuralEdges.length * 6);
+const neuralEdgeGeo = new THREE.BufferGeometry();
+neuralEdgeGeo.setAttribute('position', new THREE.BufferAttribute(neuralEdgePositions, 3));
+const neuralEdgeMat = new THREE.LineBasicMaterial({ color: 0x1a6b6b, transparent: true, opacity: 0.18 });
+const neuralEdgeLines = new THREE.LineSegments(neuralEdgeGeo, neuralEdgeMat);
+neuralGroup.add(neuralEdgeLines);
+
+// ============================================================
+// LAYER 10: 28 token boxes flowing on Bezier path into the model
+// ============================================================
+const tokenGroup = new THREE.Group();
+root.add(tokenGroup);
+const tokens = [];
+for (let i = 0; i < 28; i++) {
+  const token = new THREE.Mesh(
+    new THREE.BoxGeometry(0.09, 0.09, 0.09),
+    new THREE.MeshPhysicalMaterial({
+      color: i % 3 === 0 ? 0xc46a3d : (i % 3 === 1 ? 0xc9a050 : 0x1a6b6b),
+      roughness: 0.24,
+      metalness: 0.1,
+      transparent: true,
+      opacity: 0.72
+    })
+  );
+  token.userData.t = Math.random();
+  token.userData.speed = 0.04 + Math.random() * 0.04;
+  token.userData.phase = Math.random() * Math.PI * 2;
+  tokens.push(token);
+  tokenGroup.add(token);
+}
+
+function tokenPath(t) {
+  const p0 = new THREE.Vector3(-5.7, -4.5, -1.9);
+  const p1 = new THREE.Vector3(-5.2, -1.4, -1.7);
+  const p2 = new THREE.Vector3(-4.0, 1.0, -2.0);
+  const p3 = new THREE.Vector3(-2.2, 0.4, -0.55);
+  const a = p0.clone().lerp(p1, t);
+  const b = p1.clone().lerp(p2, t);
+  const c = p2.clone().lerp(p3, t);
+  const d = a.clone().lerp(b, t);
+  const e = b.clone().lerp(c, t);
+  return d.lerp(e, t);
+}
+
+// ============================================================
 // Mouse parallax
-let mouseX = 0, mouseY = 0;
-let targetRotX = 0, targetRotY = 0;
+// ============================================================
+let mouseX = 0;
+let mouseY = 0;
+let targetRotX = 0;
+let targetRotY = 0;
 window.addEventListener('mousemove', (e) => {
   mouseX = (e.clientX / window.innerWidth) * 2 - 1;
   mouseY = (e.clientY / window.innerHeight) * 2 - 1;
 });
 
-let t = 0;
+// ============================================================
+// Animate
+// ============================================================
+let clock = 0;
 function animate() {
-  t += 0.005;
-  helixGroup.rotation.y += 0.004;
-  helixGroup.rotation.x = Math.sin(t * 0.7) * 0.08;
+  clock += 0.006;
 
-  targetRotY += (mouseX * 0.15 - targetRotY) * 0.04;
-  targetRotX += (mouseY * 0.1 - targetRotX) * 0.04;
-  scene.rotation.y = targetRotY;
-  scene.rotation.x = targetRotX;
+  helixGroup.rotation.y += 0.0042;
+  helixGroup.rotation.x = Math.sin(clock * 0.6) * 0.07;
 
-  nodes.forEach((n) => {
-    const offset = Math.sin(t * 2 + n.userData.phase) * 0.08;
-    n.position.copy(n.userData.basePos).multiplyScalar(1 + offset * 0.05);
-    n.material.opacity = 0.25 + Math.sin(t * 2 + n.userData.phase) * 0.18;
+  targetRotY += (mouseX * 0.17 - targetRotY) * 0.035;
+  targetRotX += (mouseY * 0.11 - targetRotX) * 0.035;
+  root.rotation.y = targetRotY;
+  root.rotation.x = targetRotX;
+
+  // Helix bases gently breathe
+  helixBases.forEach((base) => {
+    const s = 1 + Math.sin(clock * 3 + base.userData.phase) * 0.12;
+    base.scale.setScalar(s);
+  });
+
+  // Node cloud: orbit + pulse
+  nodes.forEach((node, i) => {
+    const base = node.userData.basePos;
+    const p = node.userData.phase;
+    const orbit = clock * node.userData.orbit * (i % 2 ? 1 : -1);
+    const x = base.x * Math.cos(orbit) - base.z * Math.sin(orbit);
+    const z = base.x * Math.sin(orbit) + base.z * Math.cos(orbit);
+    node.position.set(
+      x + Math.sin(clock * node.userData.speed + p) * 0.08,
+      base.y + Math.sin(clock * node.userData.speed * 1.4 + p) * 0.13,
+      z + Math.cos(clock * node.userData.speed + p) * 0.08
+    );
+    node.material.opacity = 0.28 + Math.max(0, Math.sin(clock * 2.2 + p)) * 0.46;
+    node.scale.setScalar(0.85 + Math.max(0, Math.sin(clock * 2.1 + p)) * 0.55);
+  });
+
+  // Update edges to follow moving nodes
+  const edgeArray = edgeGeo.attributes.position.array;
+  edgePairs.forEach(([a, b], idx) => {
+    const na = nodes[a].position;
+    const nb = nodes[b].position;
+    const k = idx * 6;
+    edgeArray[k] = na.x; edgeArray[k + 1] = na.y; edgeArray[k + 2] = na.z;
+    edgeArray[k + 3] = nb.x; edgeArray[k + 4] = nb.y; edgeArray[k + 5] = nb.z;
+  });
+  edgeGeo.attributes.position.needsUpdate = true;
+  edgeMat.opacity = 0.09 + Math.sin(clock * 1.1) * 0.035;
+
+  // Attention beams: pulse + follow rotating helix bases
+  attentionPairs.forEach((pair) => {
+    const baseWorldPos = pair.base.getWorldPosition(new THREE.Vector3());
+    const nodeWorldPos = pair.node.getWorldPosition(new THREE.Vector3());
+    root.worldToLocal(baseWorldPos);
+    root.worldToLocal(nodeWorldPos);
+    const pos = pair.geo.attributes.position.array;
+    pos[0] = nodeWorldPos.x; pos[1] = nodeWorldPos.y; pos[2] = nodeWorldPos.z;
+    pos[3] = baseWorldPos.x; pos[4] = baseWorldPos.y; pos[5] = baseWorldPos.z;
+    pair.geo.attributes.position.needsUpdate = true;
+    pair.mat.opacity = Math.max(0, Math.sin(clock * pair.speed + pair.phase)) * 0.52;
+  });
+
+  // Cells: gentle drift + rotation + breath
+  cells.forEach((cell) => {
+    cell.position.y += Math.sin(clock * 0.8 + cell.userData.phase) * 0.0018;
+    cell.rotation.y += 0.002;
+    cell.scale.setScalar(1 + Math.sin(clock * 1.2 + cell.userData.phase) * 0.025);
+  });
+  bioGroup.rotation.y = Math.sin(clock * 0.45) * 0.12;
+  moleculeLines.rotation.z += 0.0012;
+
+  // Prediction signal rings: rise through genome, fade in/out
+  rings.forEach((ring) => {
+    const cycle = (clock * 0.18 + ring.userData.offset) % 1;
+    ring.position.y = -heightSpan * 0.55 + cycle * heightSpan * 1.1;
+    ring.scale.setScalar(0.88 + cycle * 0.35);
+    ring.material.opacity = Math.sin(cycle * Math.PI) * 0.22;
+  });
+
+  // Transformer model layers + pins
+  modelLayers.forEach((layer, i) => {
+    layer.position.y = Math.sin(clock * 0.9 + layer.userData.phase) * 0.08;
+    layer.material.opacity = (i % 2 ? 0.09 : 0.14) + Math.max(0, Math.sin(clock * 1.8 + layer.userData.phase)) * 0.04;
+  });
+  modelPins.forEach((pin) => {
+    pin.scale.setScalar(0.8 + Math.max(0, Math.sin(clock * 3 + pin.userData.phase)) * 0.75);
+    pin.material.opacity = 0.35 + Math.max(0, Math.sin(clock * 2.4 + pin.userData.phase)) * 0.42;
+  });
+  modelGroup.rotation.z = Math.sin(clock * 0.45) * 0.05;
+
+  // 9x9 attention matrix: pulsing diagonal
+  attnCells.forEach((cell) => {
+    const pulse = Math.max(0, Math.sin(clock * 3.1 + cell.userData.phase));
+    cell.material.opacity = (cell.userData.diag ? 0.24 : 0.06) + pulse * (cell.userData.diag ? 0.36 : 0.18);
+    cell.scale.setScalar(0.7 + pulse * 0.55);
+  });
+  attnMatrixGroup.rotation.z = Math.sin(clock * 0.45) * 0.06;
+
+  // Side neural-net layers
+  neuralNodes.forEach((node) => {
+    const pulse = Math.max(0, Math.sin(clock * 2.8 + node.userData.phase));
+    node.scale.setScalar(0.8 + pulse * 0.85);
+    node.material.opacity = 0.32 + pulse * 0.48;
+  });
+  const nEdgeArray = neuralEdgeGeo.attributes.position.array;
+  neuralEdges.forEach(([a, b], idx) => {
+    const na = neuralNodes[a].position;
+    const nb = neuralNodes[b].position;
+    const k = idx * 6;
+    nEdgeArray[k] = na.x; nEdgeArray[k + 1] = na.y; nEdgeArray[k + 2] = na.z;
+    nEdgeArray[k + 3] = nb.x; nEdgeArray[k + 4] = nb.y; nEdgeArray[k + 5] = nb.z;
+  });
+  neuralEdgeGeo.attributes.position.needsUpdate = true;
+  neuralEdgeMat.opacity = 0.08 + Math.max(0, Math.sin(clock * 1.5)) * 0.17;
+  neuralGroup.rotation.z = -0.04 + Math.sin(clock * 0.5) * 0.035;
+
+  // Token boxes: flow along Bezier path with jitter
+  tokens.forEach((token) => {
+    token.userData.t = (token.userData.t + token.userData.speed * 0.006) % 1;
+    const pt = tokenPath(token.userData.t);
+    token.position.copy(pt);
+    token.position.x += Math.sin(clock * 2 + token.userData.phase) * 0.08;
+    token.position.z += Math.cos(clock * 2.2 + token.userData.phase) * 0.06;
+    const s = 0.8 + Math.max(0, Math.sin(clock * 3.2 + token.userData.phase)) * 0.5;
+    token.scale.setScalar(s);
+    token.rotation.x += 0.03;
+    token.rotation.y += 0.02;
   });
 
   renderer.render(scene, camera);
@@ -2124,6 +2871,7 @@ function animate() {
 }
 animate();
 </script>
+
 
 <!-- ============ INTERACTIONS: nav, tabs, reveal, counter ============ -->
 <script>
@@ -2225,29 +2973,53 @@ if (htimeline) {
   tlObserver.observe(htimeline);
 }
 
-// ============ RECOGNITION CAROUSEL ============
+// ============ RECOGNITION CAROUSEL (looping arrows) ============
 const carousel = document.getElementById('recog-carousel');
 if (carousel) {
   const prevBtn = document.querySelector('.carousel-prev');
   const nextBtn = document.querySelector('.carousel-next');
-  const card = carousel.querySelector('.carousel-card');
-  const cardWidth = card ? card.offsetWidth + 20 : 400; // 20 = gap
+  const cards = Array.from(carousel.querySelectorAll('.carousel-card'));
+  const totalCards = cards.length;
 
-  function updateCarouselButtons() {
-    if (!prevBtn || !nextBtn) return;
-    prevBtn.disabled = carousel.scrollLeft <= 4;
-    nextBtn.disabled = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 4;
+  function getActiveIdx() {
+    const carouselRect = carousel.getBoundingClientRect();
+    let closestIdx = 0;
+    let closestDist = Infinity;
+    cards.forEach((card, i) => {
+      const cardRect = card.getBoundingClientRect();
+      const dist = Math.abs(cardRect.left - carouselRect.left);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestIdx = i;
+      }
+    });
+    return closestIdx;
   }
-  updateCarouselButtons();
+
+  function scrollToCard(idx) {
+    idx = Math.max(0, Math.min(totalCards - 1, idx));
+    const card = cards[idx];
+    if (!card) return;
+    const carouselStyle = window.getComputedStyle(carousel);
+    const paddingLeft = parseFloat(carouselStyle.paddingLeft) || 0;
+    const targetLeft = card.offsetLeft - paddingLeft;
+    carousel.scrollTo({ left: targetLeft, behavior: 'smooth' });
+  }
 
   if (prevBtn) prevBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    const idx = getActiveIdx();
+    const target = idx === 0 ? totalCards - 1 : idx - 1;
+    scrollToCard(target);
   });
   if (nextBtn) nextBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    const idx = getActiveIdx();
+    const atEnd = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 8;
+    if (atEnd || idx >= totalCards - 1) {
+      scrollToCard(0);
+    } else {
+      scrollToCard(idx + 1);
+    }
   });
-  carousel.addEventListener('scroll', updateCarouselButtons);
-  window.addEventListener('resize', updateCarouselButtons);
 }
 </script>
 
