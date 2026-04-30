@@ -44,7 +44,7 @@ duttaprat.github.io/
 
 If you like this design, you are welcome to fork this repository and adapt it for your own academic website. If you do use this template, I only ask for two things:
 
-1. Please **Star this repository** to show your support.
+1. Please **Star (⭐) this repository** to show your support.
 2. **Credit the original design** by keeping the link to [duttaprat.github.io](https://duttaprat.github.io) in your site's footer.
 
 ### Requirements for Modification:
