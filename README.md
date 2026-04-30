@@ -55,7 +55,7 @@ The personal content (biography, photos, publication metadata, CV) is **not** un
 
 ## Acknowledgments
 
-This site was iteratively designed and built by Pratik Dutta in collaboration with [Claude](https://claude.ai) (Anthropic), through several rounds of design exploration, code generation, and refinement. The 3D DNA-helix scene, layout system, animations, and editorial structure went through six major iterations before landing here.
+This site was iteratively designed and built by Pratik Dutta with the help of [Claude](https://claude.ai) (Anthropic) and ChatGPT(OpenAI), through several rounds of design exploration, code generation, and refinement. The 3D DNA-helix scene, layout system, animations, and editorial structure went through six major iterations before landing here.
 
 ## Contact
 
