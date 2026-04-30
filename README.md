@@ -40,18 +40,18 @@ duttaprat.github.io/
     └── pratik_hero.jpg     Hero photo
 ```
 
-## License
+## 🛠️ Usage & Attribution
 
-The **design, layout, and code** of this site are released under
-[Creative Commons Attribution 4.0 (CC BY 4.0)](LICENSE.md).
+If you like this design, you are welcome to fork this repository and adapt it for your own academic website. If you do use this template, I only ask for two things:
 
-You are welcome to adapt this template for your own academic site, **but please:**
+1. Please **Star this repository** to show your support.
+2. **Credit the original design** by keeping the link to [duttaprat.github.io](https://duttaprat.github.io) in your site's footer.
 
-1. Credit the original design with a footer link to [duttaprat.github.io](https://duttaprat.github.io)
-2. Replace **all** personal content (text, photos, publications, the Bengali rendering of my name, the CV file) with your own
-3. Keep the credit comment at the top of `index.html`
+### Requirements for Modification:
+* **Replace all personal content:** You must swap out all biographies, photos, publication lists, the Bengali rendering of my name, and the CV file with your own.
+* **Maintain the License:** Keep the credit comment at the top of `index.html`.
 
-The personal content (biography, photos, publication metadata, CV) is **not** under CC BY 4.0 and remains the property of Pratik Dutta or the respective copyright holders. See [LICENSE.md](LICENSE.md) for full terms.
+The **design, layout, and code** are released under [CC BY 4.0](LICENSE.md). Personal content (research text and media) remains the property of the original author.
 
 ## Acknowledgments
 
